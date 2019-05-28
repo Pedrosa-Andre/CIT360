@@ -26,6 +26,9 @@ public class CIT360 {
         //added to the the set it doesn't affect the set at all because sets
         //doesn't hold two equal elements.
         System.out.println("Class students are: \n"+class101.getAllStudents());
+        
+        ClassGrades class101G = new ClassGrades(class101);
+        System.out.println(class101G.getClassGrades());
     }
     
 }

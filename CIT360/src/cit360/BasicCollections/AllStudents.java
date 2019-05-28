@@ -17,7 +17,6 @@ import java.util.*;
  */
 public class AllStudents {
     
-    //private HashSet[] allStudents;
     Set<String> allStudents = new HashSet<String>();
 
     public AllStudents() {
@@ -33,7 +32,7 @@ public class AllStudents {
         //this point out when a student is already on the set
         for (String s : this.getAllStudents()){
             if (s == student){
-                System.out.println( student + " is already registered");
+                System.out.print( student + " is already registered ");
                 break; 
             };
         }
