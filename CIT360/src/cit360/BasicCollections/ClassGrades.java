@@ -49,7 +49,14 @@ public class ClassGrades {
      * Returs: none
      */
     public void addStudent(AllStudents cla, String name){
-        
+        cla.addStudent(name);
+        String gra = randomGrade();
+        //Another important observation about the HashMap class is that it
+        //doesn't hold two elements with the same key (similar to the Set class)
+        //So, when you add (.put()) an element to a HashMap, if the key of the
+        //element already exist in the HashMap only the value of this element in
+        //the HashMap will be updated.
+        classGrades.put(name, gra);
     };
 
     
@@ -62,6 +69,10 @@ public class ClassGrades {
      * (String)
      * Returs: none
      */
+    public void addStudentGr (AllStudents cla, String name, String gra){
+        cla.addStudent(name);
+        classGrades.put(name, gra);
+    };
     
     /**
      * randomGrade method

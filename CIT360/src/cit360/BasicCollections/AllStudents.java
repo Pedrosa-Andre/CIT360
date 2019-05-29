@@ -32,7 +32,7 @@ public class AllStudents {
         //this point out when a student is already on the set
         for (String s : this.getAllStudents()){
             if (s == student){
-                System.out.print( student + " is already registered ");
+                System.out.print( student + " is already registered in class ");
                 break; 
             };
         }
