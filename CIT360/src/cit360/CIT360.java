@@ -26,6 +26,7 @@ public class CIT360 {
         //doesn't hold two equal elements.
         class101.addStudent("James");
         System.out.println("Class students are: \n"+class101.getAllStudents());
+        
         System.out.println("");
         ClassGrades class101G = new ClassGrades(class101);
         System.out.println(class101G.getClassGrades());
@@ -35,6 +36,7 @@ public class CIT360 {
         class101G.addStudent(class101, "Clair");
         System.out.println("Students grades:");
         System.out.println(class101G.getClassGrades());
+        
         System.out.println("");
         ClassQueue class101Q = new ClassQueue();
         class101Q.addStudent("James");
@@ -44,7 +46,11 @@ public class CIT360 {
         class101Q.addStudent("Mary");
         class101Q.emptyQueue();
 
-
+        System.out.println("");
+        AttTreeList class101T = new AttTreeList();
+        class101T.importClass(class101);
+        class101T.addStudent(class101,"Jack");
+        System.out.println(class101T.getAttList());
 
     }
     

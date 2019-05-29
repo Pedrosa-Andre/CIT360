@@ -43,7 +43,7 @@ public class ClassGrades {
     
     /**
      * addStudent method
-     * Purpose: Add a new student both to the AllStudents objetc and ClassGrades
+     * Purpose: Add a new student both to the AllStudents object and ClassGrades
      * with a random grade.
      * Parameters: AllStudents (object), student name (String)
      * Returs: none
