@@ -14,16 +14,20 @@ import java.util.*;
  * insertion (I saw this tip on satckoverflow). So I'm creating this three
  * @author Andre Matheus
  */
-public class AttTreeList {
+public class ClassAttList {
     
     //The TreeSet by default always sort the elements in a natural order 
-    //(Strings -> alphabetical; Numbers -> crescent; etc) but if you whant a 
+    //(Strings -> alphabetical; Numbers -> crescent; etc) but if you want a 
     //different behavior in the comparisson (decressent, letter "c" first or 
     //whatever) you can create a comparator and place in on the TreeSet
     //constructor like TreeSet<type>(comparator);
     private Collection<String> attList = new TreeSet<String>();
 
-    public AttTreeList() {
+    public ClassAttList() {
+    }
+    
+    public ClassAttList(AllStudents cla) {
+        importClass(cla);
     }
 
     /**
@@ -33,7 +37,7 @@ public class AttTreeList {
      * Parameters: AllStudents (object)
      * Returs: none
      */
-    public void importClass(AllStudents cla){
+    private void importClass(AllStudents cla){
         for (String name : cla.getAllStudents()){
             attList.add(name);
         }
@@ -41,7 +45,7 @@ public class AttTreeList {
     
     /**
      * addStudent method
-     * Purpose: Add a new student both to the AllStudents object and AttTreeList
+     * Purpose: Add a new student both to the AllStudents object and ClassAttList
      * Parameters: AllStudents (object), student name (String)
      * Returs: none
      */
@@ -60,7 +64,5 @@ public class AttTreeList {
     public void setAttList(Collection<String> attList) {
         this.attList = attList;
     }
-    
-    
     
 }

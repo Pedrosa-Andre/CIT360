@@ -47,11 +47,11 @@ public class CIT360 {
         class101Q.emptyQueue();
 
         System.out.println("");
-        AttTreeList class101T = new AttTreeList();
-        class101T.importClass(class101);
+        ClassAttList class101T = new ClassAttList(class101);
         class101T.addStudent(class101,"Jack");
         System.out.println(class101T.getAttList());
-
+        
+        System.out.println("");
     }
     
 }
