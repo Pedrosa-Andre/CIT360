@@ -17,7 +17,7 @@ import java.util.*;
  */
 public class AllStudents {
     
-    Set<String> allStudents = new HashSet<String>();
+    private Set<String> allStudents = new HashSet<String>();
 
     public AllStudents() {
     }
@@ -30,12 +30,9 @@ public class AllStudents {
     */
     public void addStudent(String student){
         //this point out when a student is already on the set
-        for (String s : this.getAllStudents()){
-            if (s == student){
-                System.out.print( student + " is already registered in class ");
-                break; 
-            };
-        }
+        if (allStudents.contains(student)){
+            System.out.print( student + " is already registered in class ");
+        };
         allStudents.add(student);
         //You can notice that when the studend is already registered but is
         //added to the the set it doesn't affect the set at all because sets
