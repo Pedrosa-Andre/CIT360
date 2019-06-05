@@ -15,7 +15,7 @@ public class CIT360 {
 
     public static void main(String[] args) {
 
-        //To see basic collections examples uncomment the coment bellow
+        //To see basic collections sandbox examples uncomment the coment bellow
         //CallBasicCollections.basicColectionsExamples();
     }
     
