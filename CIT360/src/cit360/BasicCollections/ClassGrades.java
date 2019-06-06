@@ -17,7 +17,7 @@ import cit360.BasicCollections.*;
  */
 public class ClassGrades {
 
-    private Map<String,String> classGrades = new HashMap<String,String>();
+    protected Map<String,String> classGrades = new HashMap<String,String>();
 
     public ClassGrades() {
     }
@@ -33,7 +33,7 @@ public class ClassGrades {
      * Parameters: AllStudents (object)
      * Returs: none
      */
-    private void importClass(AllStudents cla){
+    protected void importClass(AllStudents cla){
         for (String name : cla.getAllStudents()){
             String gra = randomGrade();
             classGrades.put(name, gra);
@@ -80,7 +80,7 @@ public class ClassGrades {
      * Parameters: none
      * Returs: letter grade
      */
-    private String randomGrade(){
+    protected String randomGrade(){
         Random ran = new Random();
         int gradeN = ran.nextInt(5);
         String gradeL = "";
