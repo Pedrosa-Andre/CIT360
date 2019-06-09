@@ -8,6 +8,7 @@ package cit360.BasicJSON;
 
 import cit360.BasicCollections.AllStudents;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,8 +20,8 @@ import java.util.HashSet;
  *
  * @author Andre Matheus
  */
-public class SandboxBasicJSON {
-    public static void sandboxBasicJSON(){
+public class BasicJSONSandbox {
+    public static void sandbox(){
         
 
         //To see basic Collections sandbox examples uncomment the coment bellow
