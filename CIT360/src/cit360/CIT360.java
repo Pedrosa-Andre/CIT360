@@ -5,11 +5,11 @@
  */
 package cit360;
 import cit360.BasicCollections.CallBasicCollections;
-import cit360.BasicJSON.SandboxBasicJSON;
+import cit360.BasicJSON.BasicJSONSandbox;
+import cit360.BasicMVC.BasicMVCSandbox;
 //import java.io.*;
 //import java.util.*;
 //import com.google.gson.*;
-
 /**
  *
  * @author Andre Matheus
@@ -23,7 +23,10 @@ public class CIT360 {
         //CallBasicCollections.basicColectionsExamples();
         
         //To see basic JSON sandbox examples uncomment the coment bellow
-        SandboxBasicJSON.sandboxBasicJSON();
+        //BasicJSONSandbox.sandbox();
+        
+        //To see basic MVC sandbox examples uncomment the coment bellow
+        BasicMVCSandbox.sandbox();
         
         
     }
