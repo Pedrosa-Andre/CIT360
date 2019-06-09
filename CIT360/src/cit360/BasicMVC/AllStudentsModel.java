@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * Model layer: Responsible for holding the data. The classes in this layer hold
  * the objects that store the data. Its methods are related to the insertion and
- * return of information (setters and getters, special "filtering" methods, etc).
+ * return of information (setters and getters, or special "filtering" methods).
  * An example of a possible filtering method for this class is a method for the 
  * allStudents names Set witch prevents names with numbers to be inserted on it. 
  * @author Andre Matheus
