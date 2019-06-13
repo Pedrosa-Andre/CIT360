@@ -5,6 +5,9 @@
  */
 
 package cit360.BasicHTTP;
+import java.net.*;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
 
 /**
  *
@@ -13,21 +16,65 @@ package cit360.BasicHTTP;
 public class HTTPClass {
     
     /**
-     * HTTP stands for Hypertext Transfer Protocol. It serves to define a way 
-     * messages will be formatted and was created to facilitate the use of 
-     * hypertext (text displayed in computer with hyperlinks [references to 
-     * other texts the reader can access]) in the World Wide Web. Comparatively, 
-     * it's like if you have a lot of texts and media in the web and wants to 
-     * create an address to each one of them to find and navigate through them
-     * more easily, so the HTTP would the standard to write the addresses.
-     * 
-     * The HTTP works as a request-response protocol. It involves two elements 
-     * (usually a client and a server) where the client asks the server for a 
-     * file using an HTTP with the file address and the server reads the HTTP, 
-     * verifies where is the file is located, and send it to the client. The
-     * HTTP can be also used to request actions, in this case, the server will 
-     * return a completion message after reading the HTTP and doing the request.
+     * HTTP stands for Hypertext Transfer Protocol. It's a protocol that rules 
+     * how hypertexts (texts with hyperlinks) will be transeferred through the 
+     * world-wide-web.
+     * Comparatively, if we imagine the pages as real locations and the 
+     * URI/URL's as the addresses the HTTP would be the protocol the mailmen 
+     * have to follow when transferring things. This transfer (or communication)
+     * happens between a client and a server where the client asks something 
+     * through an HTTP request, then the server read the request, execute it and
+     * return a response message with either completion states or requested 
+     * content. The protocol does not just help the mailmen to know how to 
+     * transfer, but what to respond in case of failure (The HTTP, for example, 
+     * has its own status codes like 404 for pages not found, or 500 for 
+     * internal server errors, etc.).
+     * @throws java.lang.Exception
      */
+    
+    public HttpURLConnection start() throws Exception{
+        //Create URL object
+        URL url = new URL("https://pedrosa-andre.github.io/assignments/lesson-10/scripts/cities.json");
+        //Stabilishes connection with it.
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        //Use the GET method to get the data from the connection.
+        con.setRequestMethod("GET");
+        return con;
+    }
+    
+    public void test() throws Exception{
+        HttpURLConnection con = start();
+        
+        BufferedReader tess = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        InputStream re = con.getInputStream();
+        System.out.println(re);
+        
+        
+
+        String data = tess.readLine();
+            while (data != null) {
+                   System.out.println(data);
+
+                          data = tess.readLine();
+
+            }
+        re.close();
+        tess.close();
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        //print result
+//        System.out.println(response.toString());
+    }
+    
+    String url2 = "https://pedrosa-andre.github.io/assignments/lesson-10/scripts/cities.json";
     
     
 }
