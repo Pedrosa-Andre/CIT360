@@ -26,7 +26,7 @@ public class CIT360 {
         //To see basic JSON sandbox examples uncomment the coment bellow
         //BasicJSONSandbox.sandbox();
         
-        //To see basic MVC sandbox examples uncomment the coment bellow
+        //To see basic MVC classes in action uncomment the coment bellow
         //BasicMVCSandbox.sandbox();
         
         //To see basic HTTP sandbox examples uncomment the coment bellow
