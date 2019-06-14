@@ -7,9 +7,7 @@ package cit360;
 import cit360.BasicCollections.CallBasicCollections;
 import cit360.BasicJSON.BasicJSONSandbox;
 import cit360.BasicMVC.BasicMVCSandbox;
-import cit360.BasicHTTP.HTTPClass;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import cit360.BasicHTTP.BasicHTTPSandbox;
 //import java.io.*;
 //import java.util.*;
 //import com.google.gson.*;
@@ -31,13 +29,9 @@ public class CIT360 {
         //To see basic MVC sandbox examples uncomment the coment bellow
         //BasicMVCSandbox.sandbox();
         
-        HTTPClass ht = new HTTPClass();
-        try {
-            ht.test();
-        } catch (Exception ex) {
-            Logger.getLogger(CIT360.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("FAIL");
-        }
+        //To see basic HTTP sandbox examples uncomment the coment bellow
+        //BasicHTTPSandbox.sandbox();
+        
         
     }
     
