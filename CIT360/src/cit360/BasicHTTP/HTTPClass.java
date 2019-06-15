@@ -69,7 +69,7 @@ public class HTTPClass {
             }
 
         }catch (Exception e){
-
+            //print the error type if something went wrong
             System.out.println("Error: " + e);
 
         }
