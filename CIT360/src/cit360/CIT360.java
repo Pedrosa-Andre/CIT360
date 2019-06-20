@@ -8,6 +8,7 @@ import cit360.BasicCollections.CallBasicCollections;
 import cit360.BasicJSON.BasicJSONSandbox;
 import cit360.BasicMVC.BasicMVCSandbox;
 import cit360.BasicHTTP.BasicHTTPSandbox;
+import cit360.BasicJUnit.StudentForm;
 //import java.io.*;
 //import java.util.*;
 //import com.google.gson.*;
@@ -31,6 +32,10 @@ public class CIT360 {
         
         //To see basic HTTP sandbox examples uncomment the coment bellow
         //BasicHTTPSandbox.sandbox();
+        
+        StudentForm a1 = new StudentForm();
+        System.out.println(a1.getAge());
+        
         
         
     }
