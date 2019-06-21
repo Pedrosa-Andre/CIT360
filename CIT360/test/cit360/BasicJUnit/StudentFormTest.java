@@ -51,6 +51,9 @@ public class StudentFormTest {
     // assertNull
     // assertNotNull
     // assertSame 
+    // Both assertSame and assertEquals verify the equality, but there is an important differenece between
+    // assertSame and assertEquals is that assertEquals is based on the method .equals() that compares the values
+    // while the assertSame is based on the == operator that analyses if 
     // assertNotSame
     // assertThat
     //
