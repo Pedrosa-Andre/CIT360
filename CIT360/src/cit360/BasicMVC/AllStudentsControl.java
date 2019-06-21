@@ -20,25 +20,28 @@ public class AllStudentsControl {
 
     
     public static String addName(String name){
+        //Process the string name to standardize it before calling the Model
+        //method
         String capName = name.substring(0, 1).toUpperCase() + 
                 name.substring(1, name.length()).toLowerCase();
-        //Call .getAllStudents() fom View layer to check if the student's name 
+        //Call .getAllStudents() from Model layer to check if the student's name
         //is already in the class.
-        if (AllStudentsModel.getAllStudents().contains(capName)){
+        if (AllStudentsModel.getAllStudents().contains(capName)){               //Model
             //Return a String to the View layer (notice it could simply print it
-            //to the console, but it's a View layer function).
-            return capName + " is already in the class";
+            //to the console, but it's a View layer function, so I let it to the
+            //View).
+            return capName + " is already in the class";                        //View
         } else {
             //Call the .addStudent() method form Model layer (responsible for 
             //adding names to the allStudents set).
-            AllStudentsModel.addStudent(capName);
+            AllStudentsModel.addStudent(capName);                               //Model
             //Return a string to the View Layer.
-            return capName + " added to the class";
+            return capName + " added to the class";                             //View
         }
     }
     
     public static Set showClass(){
-        return AllStudentsModel.getAllStudents();
+        return AllStudentsModel.getAllStudents();                               //Model
     }
 
 }
