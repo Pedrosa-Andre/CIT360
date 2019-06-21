@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author INV
+ * @author Andre Matheus
  */
 public class StudentFormTest {
     
@@ -40,8 +40,22 @@ public class StudentFormTest {
     public void tearDown() {
     }
 
+    // JUnit is a t.....
+    //
+    //
+    // The main assert methods of JUnit are:
+//    // assertEquals -> comparte two values and check if they are equal
+//~   // assertArrayEquals -> compare two arrays and check if they are equal
+//    // assertTrue
+    // assertFalse
+    // assertNull
+    // assertNotNull
+    // assertSame 
+    // assertNotSame
+    // assertThat
+    //
     /**
-     * Test of getAge method, of class StudentForm.
+     * Test of getAge method, of class                                                          o StudentForm.
      */
     @Test
     public void testGetAge() {
@@ -49,12 +63,13 @@ public class StudentFormTest {
         StudentForm instance = new StudentForm();
         int result = instance.getAge();
         int expResult = 0;
-        //When just instantiated the Age should be 0 (default)
+        // When just instantiated the defalt age is 0.
+        // The assertEquals here verifies ih the instance age is equal 0
         assertEquals(expResult, result);
    }
 
     /**
-     * Test of setAge method, of class StudentForm.
+     * Test of setAge method, of class                                                            o StudentForm.
      */
     @Test
     public void testSetAge() {
@@ -63,8 +78,10 @@ public class StudentFormTest {
         StudentForm instance = new StudentForm();
         instance.setAge(age);
         int result = instance.getAge();
-        int expResult = 4;
-        // 
+        // The setAge method lacks a condition to verify a minimun age (8). The
+        // assertTrue method here helps to notice the code is incomplete
+        // because dosen't return an error message, like 'return -1 if age <= 8'.
+        assertTrue("Age must be bigger than 8", result == -1);
     }
 
     /**
@@ -169,7 +186,7 @@ public class StudentFormTest {
     }
 
     /**
-     * Test of getPossibleGrades method, of class StudentForm.
+     * Test of getPossibleGrades method, of class                                                    o StudentForm.
      */
     @Test
     public void testGetPossibleGrades() {
@@ -177,6 +194,9 @@ public class StudentFormTest {
         StudentForm instance = new StudentForm();
         String[] expResult = {"A","B","C","D","F"};
         String[] result = instance.getPossibleGrades();
+        // The default StudentForm gradePossibilities Array must be {"A","B","C","D","F"}
+        // here I use assertArrayEquals to verify if it is instatiated correctly.
+        
         // Test if the default possibleGrades is correctt by comparing with
         // expResult using assertArrayEquals.
         assertArrayEquals(expResult, result);
