@@ -40,23 +40,31 @@ public class StudentFormTest {
     public void tearDown() {
     }
 
-    // JUnit is a t.....
-    //
-    //
+    // JUnit is simply a test framework where you can write multiple tests in 
+    // Java. It allows you to easily analyze if a code is working by executing 
+    // it in a controlled environment and comparing its outputs using assert 
+    // methods.
+
     // The main assert methods of JUnit are:
-//    // assertEquals -> comparte two values and check if they are equal
-//~   // assertArrayEquals -> compare two arrays and check if they are equal
-//    // assertTrue
-    // assertFalse
-    // assertNull
-    // assertNotNull
-    // assertSame 
-    // Both assertSame and assertEquals verify the equality, but there is an important differenece between
-    // assertSame and assertEquals is that assertEquals is based on the method .equals() that compares the values
-    // while the assertSame is based on the == operator that analyses if 
-    // assertNotSame
-    // assertThat
     //
+    // assertEquals -> comparte two values and check if they are of the same 
+    //  type and the same value (comparable to using .equals() method)*
+    // assertArrayEquals -> compare two arrays and check if they are equal
+    // assertSame -> verifies if both parameters refers to the same object
+    //  (comparable to using == operator)*
+    // assertNotSame -> verifies if both parameters don't refer to the same object
+    // assertTrue -> verifies if a given condition is true
+    // assertFalse -> verifies if a given condition is false
+    // assertNull -> verifies if a given parameter is null
+    // assertNotNull -> verifies if a given parameter is not null
+    // assertThat ->
+    //
+    // * it's important to notice that the default .equals() method must be 
+    // overridden in new classes you create to work properly because its default
+    // code simply uses a == operator. This means that unless you "teach" how
+    // .equals() should compare the instances of a given created class the
+    // .equals() will behave the same way as using the == operator, in other
+    // words, assertEquals and assertSame will also behave identically.
     /**
      * Test of getAge method, of class                                                          o StudentForm.
      */
@@ -67,8 +75,8 @@ public class StudentFormTest {
         int result = instance.getAge();
         int expResult = 0;
         // When just instantiated the defalt age is 0.
-        // The assertEquals here verifies ih the instance age is equal 0
-        assertEquals(expResult, result);
+        // The assertSame here verifies if the instance age is equal 0
+        assertSame(expResult, result);
    }
 
     /**
@@ -82,8 +90,8 @@ public class StudentFormTest {
         instance.setAge(age);
         int result = instance.getAge();
         // The setAge method lacks a condition to verify a minimun age (8). The
-        // assertTrue method here helps to notice the code is incomplete
-        // because dosen't return an error message, like 'return -1 if age <= 8'.
+        // assertTrue method here helps to notice the code is incomplete because
+        // dosen't return an error message, like 'return -1 if age <= 8'.
         assertTrue("Age must be bigger than 8", result == -1);
     }
 
