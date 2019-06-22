@@ -47,17 +47,25 @@ public class StudentFormTest {
 
     // The main assert methods of JUnit are:
     //
-    // assertEquals -> comparte two values and check if they are of the same 
+//    // assertEquals -> comparte two values and check if they are of the same 
     //  type and the same value (comparable to using .equals() method)*
-    // assertArrayEquals -> compare two arrays and check if they are equal
-    // assertSame -> verifies if both parameters refers to the same object
+//    // assertArrayEquals -> compare two Arrays and check if they are equal
+//    // assertSame -> verifies if both parameters refers to the same object
     //  (comparable to using == operator)*
     // assertNotSame -> verifies if both parameters don't refer to the same object
-    // assertTrue -> verifies if a given condition is true
+//    // assertTrue -> verifies if a given condition is true
     // assertFalse -> verifies if a given condition is false
     // assertNull -> verifies if a given parameter is null
     // assertNotNull -> verifies if a given parameter is not null
-    // assertThat ->
+//    // assertThat -> uses a Macher object for more complex comparissons. There
+    // are many differen Macher objects for many different purposes, like: 
+    // typeCompatibleWith() check if a class is a sub class of another
+    // hasSize() check the size of a Collection
+    // contains() check if a Collection contains given members in a given order
+    // hasKey() check if a map contains the specified key
+    // and etc (there are lots of different Machers for various purposes)
+    // This makes the assertThat method a very powefull tool.
+    // turns the assertThat into a very powerful tool
     //
     // * it's important to notice that the default .equals() method must be 
     // overridden in new classes you create to work properly because its default
@@ -66,7 +74,7 @@ public class StudentFormTest {
     // .equals() will behave the same way as using the == operator, in other
     // words, assertEquals and assertSame will also behave identically.
     /**
-     * Test of getAge method, of class                                                          o StudentForm.
+     * Test of getAge method, of class                                                          o StudentForm.  //assertSame
      */
     @Test
     public void testGetAge() {
@@ -80,7 +88,7 @@ public class StudentFormTest {
    }
 
     /**
-     * Test of setAge method, of class                                                            o StudentForm.
+     * Test of setAge method, of class                                                          o StudentForm.  //assertTrue
      */
     @Test
     public void testSetAge() {
@@ -96,7 +104,7 @@ public class StudentFormTest {
     }
 
     /**
-     * Test of getfName method, of class StudentForm.
+     * Test of getfName method, of class                                                        o StudentForm.  //assertEquals
      */
     @Test
     public void testGetfName() {
@@ -104,7 +112,7 @@ public class StudentFormTest {
         StudentForm instance = new StudentForm();
         String expResult = "";
         String result = instance.getfName();
-        //
+        // The asserEquals here verifies if both strings are equal
         assertEquals(expResult, result);
     }
 
@@ -180,11 +188,11 @@ public class StudentFormTest {
         String expResult = "";
         String result = instance.getGrade();
         //
-        assertNull("woooooow", result);
+        assertNull("", result);
     }
 
     /**
-     * Test of setGrade method, of class StudentForm.
+     * Test of setGrade method, of class                                                            o StudentForm.  //assertThat
      */
     @Test
     public void testSetGrade() {
@@ -192,12 +200,13 @@ public class StudentFormTest {
         String grade = "A";
         StudentForm instance = new StudentForm();
         instance.setGrade(grade);
-        //Check if a given grade is among the possible grades using assertThat
+        // Check if a given grade is among the possible grades using assertThat
+        // and the hasItem() macher.
         assertThat(Arrays.asList(instance.getPossibleGrades()),hasItem(instance.getGrade()));
     }
 
     /**
-     * Test of getPossibleGrades method, of class                                                    o StudentForm.
+     * Test of getPossibleGrades method, of class                                                  o StudentForm.  //assertArray
      */
     @Test
     public void testGetPossibleGrades() {
