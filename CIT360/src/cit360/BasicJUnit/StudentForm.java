@@ -6,8 +6,6 @@
 
 package cit360.BasicJUnit;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Andre Matheus
@@ -15,9 +13,8 @@ import java.util.Scanner;
 public class StudentForm {
     
     private int age;
-    private String fName;
-    private String lName;
-    private String[]bothNames = new String[2];
+    private String fName = "";
+    private String lName = null;
     private String grade;
     private String[]possibleGrades = {"A","B","C","D","F"};
     
@@ -29,28 +26,20 @@ public class StudentForm {
         this.age = age;
     }
 
-    public String getfName() {
+    public String getFName() {
         return fName;
     }
 
-    public void setfName(String fName) {
+    public void setFName(String fName) {
         this.fName = fName;
     }
 
-    public String getlName() {
+    public String getLName() {
         return lName;
     }
 
-    public void setlName(String lName) {
+    public void setLName(String lName) {
         this.lName = lName;
-    }
-
-    public String[] getBothNames() {
-        return bothNames;
-    }
-
-    public void setBothNames(String[] bothNames) {
-        this.bothNames = bothNames;
     }
 
     public String getGrade() {
@@ -64,5 +53,5 @@ public class StudentForm {
     public String[] getPossibleGrades() {
         return possibleGrades;
     }
-    
+   
 }

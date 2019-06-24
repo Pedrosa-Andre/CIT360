@@ -7,7 +7,6 @@ package cit360.BasicJUnit;
 
 import java.util.Arrays;
 import static org.hamcrest.CoreMatchers.hasItem;
-import static org.hamcrest.CoreMatchers.hasItems;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -47,25 +46,24 @@ public class StudentFormTest {
 
     // The main assert methods of JUnit are:
     //
-//    // assertEquals -> comparte two values and check if they are of the same 
-    //  type and the same value (comparable to using .equals() method)*
-//    // assertArrayEquals -> compare two Arrays and check if they are equal
-//    // assertSame -> verifies if both parameters refers to the same object
-    //  (comparable to using == operator)*
-    // assertNotSame -> verifies if both parameters don't refer to the same object
-//    // assertTrue -> verifies if a given condition is true
-    // assertFalse -> verifies if a given condition is false
-    // assertNull -> verifies if a given parameter is null
-    // assertNotNull -> verifies if a given parameter is not null
-//    // assertThat -> uses a Macher object for more complex comparissons. There
+    // - assertEquals -> comparte two values and check if they are of the same 
+    // type and the same value (comparable to using .equals() method)*
+    // - assertArrayEquals -> compare two Arrays and check if they are equal
+    // - assertSame -> verifies if both parameters refers to the same object
+    // (comparable to using == operator)*
+    // - assertNotSame -> verifies if both parameters don't refer to the same object
+    // - assertTrue -> verifies if a given condition is true
+    // - assertFalse -> verifies if a given condition is false
+    // - assertNull -> verifies if a given parameter is null
+    // - assertNotNull -> verifies if a given parameter is not null
+    // - assertThat -> uses a Macher object for more complex comparissons. There
     // are many differen Macher objects for many different purposes, like: 
-    // typeCompatibleWith() check if a class is a sub class of another
-    // hasSize() check the size of a Collection
-    // contains() check if a Collection contains given members in a given order
-    // hasKey() check if a map contains the specified key
-    // and etc (there are lots of different Machers for various purposes)
-    // This makes the assertThat method a very powefull tool.
-    // turns the assertThat into a very powerful tool
+    // typeCompatibleWith() check if a class is a sub class of another hasSize()
+    // check the size of a Collection contains() check if a Collection contains
+    // given members in a given order hasKey() check if a map contains the 
+    // specified key and etc (there are lots of different Machers for various 
+    // purposes) This makes the assertThat method a very powefull tool. turns 
+    // the assertThat into a very powerful tool.
     //
     // * it's important to notice that the default .equals() method must be 
     // overridden in new classes you create to work properly because its default
@@ -73,8 +71,9 @@ public class StudentFormTest {
     // .equals() should compare the instances of a given created class the
     // .equals() will behave the same way as using the == operator, in other
     // words, assertEquals and assertSame will also behave identically.
+    
     /**
-     * Test of getAge method, of class                                                          o StudentForm.  //assertSame
+     * Test of getAge method, of class StudentForm.                             //assertSame
      */
     @Test
     public void testGetAge() {
@@ -88,7 +87,7 @@ public class StudentFormTest {
    }
 
     /**
-     * Test of setAge method, of class                                                          o StudentForm.  //assertTrue
+     * Test of setAge method, of class StudentForm.                             //assertTrue
      */
     @Test
     public void testSetAge() {
@@ -104,95 +103,75 @@ public class StudentFormTest {
     }
 
     /**
-     * Test of getfName method, of class                                                        o StudentForm.  //assertEquals
+     * Test of getFName method, of class StudentForm.                           //assertEquals
      */
     @Test
-    public void testGetfName() {
+    public void testGetFName() {
         System.out.println("getfName");
         StudentForm instance = new StudentForm();
         String expResult = "";
-        String result = instance.getfName();
+        String result = instance.getFName();
         // The asserEquals here verifies if both strings are equal
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of setfName method, of class StudentForm.
+     * Test of setFName method, of class StudentForm.                           //assertNotSame
      */
     @Test
-    public void testSetfName() {
+    public void testSetFName() {
         System.out.println("setfName");
-        String fName = "";
+        String fName = "Matt";
         StudentForm instance = new StudentForm();
-        instance.setfName(fName);
-        //
+        instance.setFName(fName);
+        String defaultName = "";
+        // Here I use a assertNotSame to verify if the setFName is working by 
+        // comparing it wit its default value
+        assertNotSame(instance.getFName(),defaultName);
     }
 
     /**
-     * Test of getlName method, of class StudentForm.
+     * Test of getLName method, of class StudentForm.                           //assertNull
      */
     @Test
-    public void testGetlName() {
+    public void testGetLName() {
         System.out.println("getlName");
         StudentForm instance = new StudentForm();
-        String expResult = "";
-        String result = instance.getlName();
-        //
-        assertEquals(expResult, result);
+        String result = instance.getLName();
+        //Here I use assertNull to see if the default lName value is correct
+        assertNull(result);
     }
 
     /**
-     * Test of setlName method, of class StudentForm.
+     * Test of setLName method, of class StudentForm.                           //assertNotNull
      */
     @Test
-    public void testSetlName() {
+    public void testSetLName() {
         System.out.println("setlName");
-        String lName = "";
+        String lName = "Jorgensen";
         StudentForm instance = new StudentForm();
-        instance.setlName(lName);
-        //
+        instance.setLName(lName);
+        // Here I verify if setLName() method is working by verifing if the
+        // lName String keeps null or not after using the method.
+        assertNotNull(instance.getLName());
     }
 
     /**
-     * Test of getBothNames method, of class StudentForm.
-     */
-    @Test
-    public void testGetBothNames() {
-        System.out.println("getBothNames");
-        StudentForm instance = new StudentForm();
-        String[] expResult = null;
-        String[] result = instance.getBothNames();
-        //
-        assertArrayEquals(expResult, result);
-    }
-
-    /**
-     * Test of setBothNames method, of class StudentForm.
-     */
-    @Test
-    public void testSetBothNames() {
-        System.out.println("setBothNames");
-        String[] bothNames = null;
-        StudentForm instance = new StudentForm();
-        instance.setBothNames(bothNames);
-        //
-    }
-
-    /**
-     * Test of getGrade method, of class StudentForm.
+     * Test of getGrade method, of class StudentForm.                           //assertFalse
      */
     @Test
     public void testGetGrade() {
         System.out.println("getGrade");
         StudentForm instance = new StudentForm();
-        String expResult = "";
         String result = instance.getGrade();
-        //
-        assertNull("", result);
+        // Check if defaul grade is not different than null, if the condition is 
+        // false than result is different than equal and a message "They're not 
+        // equal" will be thrown.
+        assertFalse("They're not equal", result != null);
     }
 
     /**
-     * Test of setGrade method, of class                                                            o StudentForm.  //assertThat
+     * Test of setGrade method, of class StudentForm.                           //assertThat
      */
     @Test
     public void testSetGrade() {
@@ -206,7 +185,7 @@ public class StudentFormTest {
     }
 
     /**
-     * Test of getPossibleGrades method, of class                                                  o StudentForm.  //assertArray
+     * Test of getPossibleGrades method, of class StudentForm.                  //assertArray
      */
     @Test
     public void testGetPossibleGrades() {
@@ -216,7 +195,6 @@ public class StudentFormTest {
         String[] result = instance.getPossibleGrades();
         // The default StudentForm gradePossibilities Array must be {"A","B","C","D","F"}
         // here I use assertArrayEquals to verify if it is instatiated correctly.
-        
         // Test if the default possibleGrades is correctt by comparing with
         // expResult using assertArrayEquals.
         assertArrayEquals(expResult, result);
