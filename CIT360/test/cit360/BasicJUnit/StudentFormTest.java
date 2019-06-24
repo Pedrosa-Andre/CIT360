@@ -57,13 +57,8 @@ public class StudentFormTest {
     // - assertNull -> verifies if a given parameter is null
     // - assertNotNull -> verifies if a given parameter is not null
     // - assertThat -> uses a Macher object for more complex comparissons. There
-    // are many differen Macher objects for many different purposes, like: 
-    // typeCompatibleWith() check if a class is a sub class of another hasSize()
-    // check the size of a Collection contains() check if a Collection contains
-    // given members in a given order hasKey() check if a map contains the 
-    // specified key and etc (there are lots of different Machers for various 
-    // purposes) This makes the assertThat method a very powefull tool. turns 
-    // the assertThat into a very powerful tool.
+    // are many differen Macher objects for many different purposes, this makes
+    // the assertThat method a very powefull tool.
     //
     // * it's important to notice that the default .equals() method must be 
     // overridden in new classes you create to work properly because its default
