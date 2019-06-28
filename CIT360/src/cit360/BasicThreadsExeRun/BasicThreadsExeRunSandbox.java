@@ -101,8 +101,7 @@ public class BasicThreadsExeRunSandbox {
     
     //                          -----Excecutors-----
     // See more in the link bellow...
-    ExecutorsExamples ex = new ExecutorsExamples(); //ctrl+click to go
-    
+    ExecutorsExamples ex = new ExecutorsExamples(); //ctrl+click to go    
     
     
     }
